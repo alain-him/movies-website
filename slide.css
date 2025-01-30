@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+
+  .gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .gallery {
+    display: flex;
+    width: 90%;
+    max-width: 800px;
+    justify-content: space-between;
+  }
+
+  .gallery img {
+    width: 32%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  .pagination button:hover {
+    background-color: #888;
+  }

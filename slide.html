@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination Slide</title>
+  <link rel="stylesheet" href="slide.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+  <div class="gallery-container">
+    <div class="gallery" id="gallery">
+      <img src="dd.jpeg" alt="Image 1">
+      <img src="kk.jpeg" alt="Image 2">
+      <img src="dd.jpeg" alt="Image 3">
+    </div>
+  </div>
+
+  <div class="pagination">
+    <button onclick="movePage('prev')"><i class='bx bxs-skip-previous-circle'></i></button>
+    <button onclick="movePage('next')"><i class='bx bxs-skip-next-circle'></i></button>
+  </div>
+
+  <script>
+    let currentPage = 0;
+    const images = [
+      ['qq.png', 'kk.jpeg', 'qq.png'],
+      ['dd.jpeg', 'jj.jpg', 'dd.jpeg'],
+      ['hh.jpeg', 'jj.jpg', 'hh.jpeg']
+    ];
+
+    const gallery = document.getElementById('gallery');
+
+    function updateGallery() {
+      const currentImages = images[currentPage];
+      const imgs = gallery.getElementsByTagName('img');
+      
+      for (let i = 0; i < imgs.length; i++) {
+        imgs[i].src = currentImages[i];
+      }
+    }
+
+    function movePage(direction) {
+      if (direction === 'next') {
+        currentPage = (currentPage + 1) % images.length;
+      } else {
+        currentPage = (currentPage - 1 + images.length) % images.length;
+      }
+      updateGallery();
+    }
+
+    // Initialize gallery
+    updateGallery();
+  </script>
+
+</body>
+</html>
